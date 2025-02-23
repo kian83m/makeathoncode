@@ -73,7 +73,7 @@ def happy(LCD):
     LCD.LCD_Clear()
 
     # Create a new image with a red background
-    image = Image.new("RGB", (LCD.width, LCD.height), "GREEN")
+    image = Image.new("RGB", (LCD.width, LCD.height), "YELLOW")
     draw = ImageDraw.Draw(image)
 
     # Draw two eyes for the sad face
@@ -124,13 +124,13 @@ def main():
 
     while (True):
         sad(LCD)
-        time.sleep(3)
+        time.sleep(1)
         LCD.LCD_Clear()
-        time.sleep(3)
+        time.sleep(1)
         happy(LCD)
-        time.sleep(3)
+        time.sleep(1)
         medium(LCD)
-        time.sleep(3)
+        time.sleep(1)
 
 if __name__ == '__main__':
     main()
