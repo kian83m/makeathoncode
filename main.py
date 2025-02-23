@@ -44,12 +44,9 @@ import LCD_1in44
 import time
 from PIL import Image, ImageDraw, ImageFont
 
-def main():
-    # Initialize the LCD display
-    LCD = LCD_1in44.LCD()
-    print("********** Init LCD **********")
-    Lcd_ScanDir = LCD_1in44.SCAN_DIR_DFT  # Default scan direction
-    LCD.LCD_Init(Lcd_ScanDir)
+global LCD
+
+def sad():
     LCD.LCD_Clear()
 
     # Create a new image with a red background
@@ -71,6 +68,15 @@ def main():
     
     # Display the image on the LCD
     LCD.LCD_ShowImage(image, 0, 0)
+
+
+def main():
+    # Initialize the LCD display
+    LCD = LCD_1in44.LCD()
+    print("********** Init LCD **********")
+    Lcd_ScanDir = LCD_1in44.SCAN_DIR_DFT  # Default scan direction
+    LCD.LCD_Init(Lcd_ScanDir)
+
     time.sleep(3)
 
 if __name__ == '__main__':
