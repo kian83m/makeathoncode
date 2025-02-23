@@ -5,7 +5,6 @@ import LCD_1in44
 from PIL import Image, ImageDraw, ImageFont
 
 app = Flask(__name__)
-global LCD
 
 def sad(LCD):
     LCD.LCD_Clear()
@@ -110,6 +109,7 @@ def receive_value():
     return jsonify({'message': f"Value {value} received successfully"}), 200
 
 if __name__ == '__main__':
-    LED= init()
+    global LCD
+    LCD = init()  # Correctly assign the global LCD
     port = int(os.environ.get('PORT', 8080))
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=port)
