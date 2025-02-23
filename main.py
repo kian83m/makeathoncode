@@ -123,9 +123,9 @@ def init():
     return LCD
 
 def val_deter(x, LCD):
-    if x > 80:
+    if x >= 70:
         happy(LCD)
-    elif x>40:
+    elif x>=40:
         medium(LCD)
     else:
         sad(LCD)
