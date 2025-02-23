@@ -64,11 +64,33 @@ def sad(LCD):
     draw.arc((40, 70, 90, 110), start=200, end=340, fill="WHITE", width=2)
 
     # Draw text "sad" below the face
-    draw.text((50, 115), "sad", fill="WHITE")
     
     # Display the image on the LCD
     LCD.LCD_ShowImage(image, 0, 0)
 
+
+def happy(LCD):
+    LCD.LCD_Clear()
+
+    # Create a new image with a red background
+    image = Image.new("RGB", (LCD.width, LCD.height), "GREEN")
+    draw = ImageDraw.Draw(image)
+
+    # Draw two eyes for the sad face
+    # Left eye
+    draw.ellipse((40, 40, 50, 50), fill="WHITE", outline="BLACK")
+    # Right eye
+    draw.ellipse((78, 40, 88, 50), fill="WHITE", outline="BLACK")
+
+    # Draw a frowning mouth using an arc
+    # The arc is drawn from 200 to 340 degrees to form a downward curve (frown)
+    draw.arc((40, 70, 90, 110), start=20, end=160, fill="WHITE", width=2)
+
+    # Draw text "sad" below the face
+    # draw.text((50, 115), "sad", fill="WHITE")
+    
+    # Display the image on the LCD
+    LCD.LCD_ShowImage(image, 0, 0)
 
 def main():
     # Initialize the LCD display
