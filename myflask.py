@@ -107,7 +107,7 @@ def receive_value():
         return jsonify({"error": "Missing required field: 'value'"}), 400
 
     value = data["value"]
-    if not value or not isinstance(value, int):
+    if (not value and value != 0) or not isinstance(value, int):
         return jsonify({'error': 'Value must be an integer'}), 400
     # Optionally, print the value to the server's console
     print(f"Received value: {value}")
