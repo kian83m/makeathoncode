@@ -84,11 +84,11 @@ def init():
 
 def val_deter(x, LCD):
     if x >= 70:
-        happy(LCD)
+        sad(LCD)
     elif x>=40:
         medium(LCD)
     else:
-        sad(LCD)
+        happy(LCD)
 
 
 @app.route('/api/', methods=['POST'])
