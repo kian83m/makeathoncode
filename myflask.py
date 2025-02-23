@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+# from flask import Flask, request, jsonify
 import os
 
 import LCD_1in44
@@ -91,25 +91,31 @@ def val_deter(x, LCD):
         happy(LCD)
 
 
-@app.route('/api/', methods=['POST'])
-def receive_value():
-    data = request.get_json()
-    if not data or 'value' not in data:
-        return jsonify({"error": "Missing required field: 'value'"}), 400
+# @app.route('/api/', methods=['POST'])
+# def receive_value():
+#     data = request.get_json()
+#     if not data or 'value' not in data:
+#         return jsonify({"error": "Missing required field: 'value'"}), 400
 
-    value = data["value"]
-    if not value or not isinstance(value, int):
-        return jsonify({'error': 'Value must be an integer'}), 400
-    # Optionally, print the value to the server's console
-    print(f"Received value: {value}")
-    val_deter(value, LCD)
+#     value = data["value"]
+#     if not value or not isinstance(value, int):
+#         return jsonify({'error': 'Value must be an integer'}), 400
+#     # Optionally, print the value to the server's console
+#     print(f"Received value: {value}")
+#     val_deter(value, LCD)
 
 
-    # Respond with a success message
-    return jsonify({'message': f"Value {value} received successfully"}), 200
+#     # Respond with a success message
+#     return jsonify({'message': f"Value {value} received successfully"}), 200
+
+# if __name__ == '__main__':
+#     global LCD
+#     LCD = init()  # Correctly assign the global LCD
+#     port = int(os.environ.get('PORT', 8080))
+#     app.run(debug=True, use_reloader=False, host='0.0.0.0', port=port)
+
 
 if __name__ == '__main__':
     global LCD
     LCD = init()  # Correctly assign the global LCD
-    port = int(os.environ.get('PORT', 8080))
-    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=port)
+    val_deter(5, LCD)
