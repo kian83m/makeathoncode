@@ -73,7 +73,7 @@ def happy(LCD):
     LCD.LCD_Clear()
 
     # Create a new image with a red background
-    image = Image.new("RGB", (LCD.width, LCD.height), "YELLOW")
+    image = Image.new("RGB", (LCD.width, LCD.height), "LawnGreen")
     draw = ImageDraw.Draw(image)
 
     # Draw two eyes for the sad face
@@ -96,7 +96,7 @@ def medium(LCD):
     LCD.LCD_Clear()
 
     # Create a new image with a red background
-    image = Image.new("RGB", (LCD.width, LCD.height), "GREEN")
+    image = Image.new("RGB", (LCD.width, LCD.height), "ORANGE")
     draw = ImageDraw.Draw(image)
 
     # Draw two eyes for the sad face
