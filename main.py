@@ -84,7 +84,7 @@ def happy(LCD):
 
     # Draw a frowning mouth using an arc
     # The arc is drawn from 200 to 340 degrees to form a downward curve (frown)
-    draw.arc((40, 70, 90, 110), start=20, end=160, fill="WHITE", width=2)
+    draw.arc((40, 60, 90, 100), start=20, end=160, fill="WHITE", width=2)
 
     # Draw text "sad" below the face
     # draw.text((50, 115), "sad", fill="WHITE")
