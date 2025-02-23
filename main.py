@@ -115,22 +115,28 @@ def medium(LCD):
     # Display the image on the LCD
     LCD.LCD_ShowImage(image, 0, 0)
 
-def main():
-    # Initialize the LCD display
+def init():
     LCD = LCD_1in44.LCD()
     print("********** Init LCD **********")
     Lcd_ScanDir = LCD_1in44.SCAN_DIR_DFT  # Default scan direction
     LCD.LCD_Init(Lcd_ScanDir)
+    return LCD
+
+def val_deter(x):
+    if x > 80:
+        happy()
+    elif x>40:
+        medium()
+    else:
+        sad()
+
+
+def main():
+    # Initialize the LCD display
+    LCD = init()
 
     while (True):
-        sad(LCD)
-        time.sleep(1)
-        LCD.LCD_Clear()
-        time.sleep(1)
-        happy(LCD)
-        time.sleep(1)
-        medium(LCD)
-        time.sleep(1)
-
+        x = int(input())
+        val_deter(x)
 if __name__ == '__main__':
     main()
