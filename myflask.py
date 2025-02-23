@@ -4,7 +4,7 @@ import os
 import LCD_1in44
 from PIL import Image, ImageDraw, ImageFont
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 def sad(LCD):
     LCD.LCD_Clear()
