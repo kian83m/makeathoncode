@@ -122,7 +122,6 @@ if __name__ == '__main__':
     LCD = init()  # Correctly assign the global LCD
     port = int(os.environ.get('PORT', 8080))
     app.run(debug=True, use_reloader=False, host='0.0.0.0', port=port)
-    host_ip = socket.gethostbyname(socket.gethostname())
 
 
 # if __name__ == '__main__':
