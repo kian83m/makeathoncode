@@ -77,7 +77,11 @@ def main():
     Lcd_ScanDir = LCD_1in44.SCAN_DIR_DFT  # Default scan direction
     LCD.LCD_Init(Lcd_ScanDir)
 
-    time.sleep(3)
+    while (True):
+        sad()
+        time.sleep(3)
+        LCD.LCD_Clear()
+        time.sleep(3)
 
 if __name__ == '__main__':
     main()
