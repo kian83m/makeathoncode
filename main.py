@@ -122,13 +122,13 @@ def init():
     LCD.LCD_Init(Lcd_ScanDir)
     return LCD
 
-def val_deter(x):
+def val_deter(x, LCD):
     if x > 80:
-        happy()
+        happy(LCD)
     elif x>40:
-        medium()
+        medium(LCD)
     else:
-        sad()
+        sad(LCD)
 
 
 def main():
@@ -137,6 +137,6 @@ def main():
 
     while (True):
         x = int(input())
-        val_deter(x)
+        val_deter(x, LCD)
 if __name__ == '__main__':
     main()
