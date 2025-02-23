@@ -44,9 +44,9 @@ import LCD_1in44
 import time
 from PIL import Image, ImageDraw, ImageFont
 
-global LCD
 
-def sad():
+
+def sad(LCD):
     LCD.LCD_Clear()
 
     # Create a new image with a red background
@@ -78,7 +78,7 @@ def main():
     LCD.LCD_Init(Lcd_ScanDir)
 
     while (True):
-        sad()
+        sad(LCD)
         time.sleep(3)
         LCD.LCD_Clear()
         time.sleep(3)
