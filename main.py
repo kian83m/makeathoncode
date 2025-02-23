@@ -136,7 +136,7 @@ def main():
     LCD = init()
 
     while (True):
-        x = int(input())
+        x = float(input())
         val_deter(x, LCD)
 if __name__ == '__main__':
     main()
